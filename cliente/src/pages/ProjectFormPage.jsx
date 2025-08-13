@@ -24,13 +24,23 @@ export function ProjectFormPage() {
     if (params.id) {
       // hay otras formas de visualizar el toast (https://react-hot-toast.com/)
       await updateProject(params.id, data)
-      toast.success('Proyecto actualizado!')
+      toast.success('Proyecto actualizado!', {
+        style: {
+          borderRadius: '10px',
+          background: '#333',
+          color: '#fff',
+        },
+      })
     } else {
       // otra forma de usar el toast usando promise
       await toast.promise(createProject(data), {
         loading: 'Cargando...',
         success: <b>Proyecto creado!</b>,
         error: <b>No se ha podido crear</b>,
+        style: {
+          background: '#333',
+          color: '#fff',
+        },
       })
     }
     navigate('/projects')
@@ -50,18 +60,22 @@ export function ProjectFormPage() {
   return (
     <div class="max-w-xl mx-auto">
       <form onSubmit={onSubmit}>
+        <label class="mb-3 block text-white/70 text-lg font-bold">Titulo</label>
         <input
           type="text"
-          placeholder="Titulo"
+          placeholder="Ingrese el titulo del proyecto"
           {...register('titulo', { required: true })}
           class="mb-3 py-4 text-white text-lg rounded-lg block w-full p-2.5 border border-gray-700 hover:border-emerald-500 transition-colors focus:border-emerald-500 focus:outline-none"
         />
         {errors.titulo && <span>Este campo es requerido</span>}
+        <label class="mb-3 block text-white/70 text-lg font-bold">
+          Descripcion
+        </label>
         <textarea
           rows="3"
-          placeholder="Descripcion"
+          placeholder="Ingrese la descripcion del proyecto"
           {...register('descripcion', { required: true })}
-          class="mb-3 pb-4 text-white text-lg rounded-lg block w-full p-2.5 border border-gray-700 hover:border-emerald-500 transition-colors focus:border-emerald-500 focus:outline-none"
+          class="mb-5 pb-4 text-white text-lg rounded-lg block w-full p-2.5 border border-gray-700 hover:border-emerald-500 transition-colors focus:border-emerald-500 focus:outline-none"
         ></textarea>
         <div class="flex justify-between mt-4">
           <button class="block text-[15px] text-white bg-indigo-700 hover:bg-indigo-800 focus:outline-none font-medium rounded-lg text-sm px-5 py-3 text-center me-2 mb-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 cursor-pointer">

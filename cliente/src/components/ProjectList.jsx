@@ -14,10 +14,15 @@ export function ProjectList() {
   }, [])
 
   return (
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {projects.map((project) => (
-        <ProjectCard key={project.id} project={project} />
-      ))}
-    </div>
+    <section>
+      <h1 class="text-3xl font-bold mb-8 text-center text-white/70">
+        Lista de Proyectos
+      </h1>
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 ">
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
+      </div>
+    </section>
   )
 }

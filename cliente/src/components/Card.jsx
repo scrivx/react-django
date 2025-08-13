@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom'
 
 export function ProjectCard({ project }) {
   const navigate = useNavigate()
-
   return (
     <div
       class="px-5 py-3 rounded-lg bg-[#1d1e24] border border-gray-800 hover:border-emerald-900 cursor-pointer"
