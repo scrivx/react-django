@@ -5,13 +5,13 @@ export function ProjectCard({ project }) {
 
   return (
     <div
-      class="group w-full rounded-lg bg-[rgb(41,49,79)] p-5 transition relative duration-300 cursor-pointer hover:translate-y-[3px] hover:shadow-[0_-8px_0px_0px_rgb(244,67,54)]"
+      class="px-5 py-3 rounded-lg bg-[#1d1e24] border border-gray-800 hover:border-emerald-900 cursor-pointer"
       onClick={() => {
         navigate(`/projects/${project.id}`)
       }}
     >
-      <h1 class="text-xl font-bold text-white mb-2">{project.titulo}</h1>
-      <p class="text-lg text-gray-300 ">{project.descripcion}</p>
+      <h1 class="text-2xl font-bold text-emerald-300 mb-2 mt-2">{project.titulo}</h1>
+      <p class="text-lg text-gray-400 mb-2">{project.descripcion}</p>
     </div>
   )
 }

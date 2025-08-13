@@ -4,16 +4,14 @@ export function Nav() {
   return (
     <div class="flex justify-between items-center py-3">
       <Link to="/projects">
-        <h1 class="font-bold text-3xl mb-4 text-gray-200">Proyectos</h1>
+        <h1 class="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-t from-emerald-500 via-teal-400 ">Proyectos</h1>
       </Link>
 
-      <button class="overflow-hidden rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 p-px font-medium text-white shadow-[0_1000px_0_0_hsl(0_0%_100%_/_0%)_inset] transition-colors hover:shadow-[0_1000px_0_0_hsl(0_0%_100%_/_2%)_inset]">
-        <div class="relative rounded-xl bg-slate-950/50 px-4 py-3 transition-colors group-hover/btn:bg-transparent">
-          <span class="relative flex items-center justify-center gap-2">
-            <Link to="/projects-create">Crear Proyecto</Link>
-          </span>
-        </div>
-      </button>
+      <button
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-gray-700 hover:border-emerald-500 transition-colors text-gray-400 hover:text-green-300"
+        >
+              <Link to="/projects-create">Crear Proyecto</Link>
+        </button>
     </div>
   )
 }

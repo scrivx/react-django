@@ -54,22 +54,22 @@ export function ProjectFormPage() {
           type="text"
           placeholder="Titulo"
           {...register('titulo', { required: true })}
-          class="mb-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="mb-3 py-4 text-white text-lg rounded-lg block w-full p-2.5 border border-gray-700 hover:border-emerald-500 transition-colors focus:border-emerald-500 focus:outline-none"
         />
         {errors.titulo && <span>Este campo es requerido</span>}
         <textarea
           rows="3"
           placeholder="Descripcion"
           {...register('descripcion', { required: true })}
-          class="mb-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="mb-3 pb-4 text-white text-lg rounded-lg block w-full p-2.5 border border-gray-700 hover:border-emerald-500 transition-colors focus:border-emerald-500 focus:outline-none"
         ></textarea>
         <div class="flex justify-between mt-4">
-          <button class=" block text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+          <button class="block text-[15px] text-white bg-indigo-700 hover:bg-indigo-800 focus:outline-none font-medium rounded-lg text-sm px-5 py-3 text-center me-2 mb-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 cursor-pointer">
             Crear
           </button>
           {params.id && (
             <button
-              class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+              class="text-white bg-red-700 hover:bg-red-800 focus:outline-none font-medium rounded-lg text-[15px] px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-500 dark:hover:bg-red-600 cursor-pointer"
               onClick={async () => {
                 const accepted = window.confirm(
                   '¿Estás seguro de eliminar este proyecto?'
